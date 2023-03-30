@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Number1:</label><input type="number" id="num1" placeholder="Enter number 1"/><br><br>
+    <label>Number2:</label><input type="number" id="num2" placeholder="Enter number 2"/><br><br>
+    <label>operator:</label><input type="text" id="operator" placeholder="Enter operator"/><br><br>
+    <button onclick="submit()">Submit</button>
+</body>
+<script>
+    function submit(){
+    let number1 = Number(document.getElementById('num1').value);
+    let number2 = Number(document.getElementById('num2').value);
+    let operator = document.getElementById('operator').value;
+    if(operator == "+"){
+        console.log(number1+number2);
+    }
+    else if(operator == "-"){
+        console.log(number1-number2);
+    }
+    else if(operator == "*"){
+        console.log(number1*number2);
+    }
+    else if(operator == "/"){
+        console.log(number1/number2);
+    }
+    else{
+        console.log("Invalid operator.");
+    }
+    }
+</script>
+</html>

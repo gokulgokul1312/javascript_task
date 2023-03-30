@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="f_input" placeholder="Enter input 1" />
+    <input type="number" id="s_input" placeholder="Enter input 2" />
+    <span id="result"></span>
+    <button onclick="add()">Add</button>
+</body>
+<script>
+    let arr=[];
+    function add(){
+        let input1 = Number(document.getElementById('f_input').value);
+        let input2 = Number(document.getElementById('s_input').value);
+        let result=input1+input2;
+        let newObject={
+            f_input:input1,
+            s_input:input2,
+            result:result,
+        }
+        newObject.oddOrEven=(result%2 == 0) ? "result is even" : "result is odd",
+        arr.push(newObject);
+        console.log(arr);
+    }
+</script>
+</html>

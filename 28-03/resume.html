@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name:</label><input type="text" id="name" placeholder="Enter name"/></br>
+    <label>Phone_No:</label><input type="text" id="phoneNo" placeholder="Enter phoneNo"/></br>
+    <label>Email_ID:</label><input type="text" id="email" placeholder="Enter email"/></br>
+    <labe>DOB:</label><input type="date" id="dob" placeholder="Enter dob"/></br>
+    <label>Degree:</label><input type="text" id="degree" placeholder="Enter degree"/></br>
+    <button onclick="submit()">Submit</button>
+</body>
+<script>
+    let array=[];
+    function submit(){
+    let input1 = document.getElementById('name').value;
+    let input2 = document.getElementById('phoneNo').value;
+    let input3 = document.getElementById('email').value;
+    let input4 = document.getElementById('dob').value;
+    let input5 = document.getElementById('degree').value;
+    let newObj={
+        name:input1,
+        phoneNo:input2,
+        email:input3,
+        dateOfBirth:input4,
+        degree:input5,
+    };
+    array.push(newObj)
+    console.log(array);
+}
+</script>
+</html>

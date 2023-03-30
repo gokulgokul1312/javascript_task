@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name:</label><input type="text" id="name" placeholder="Enter name"/></br><br>
+    <label>Phone_No:</label><input type="text" id="phoneNo" placeholder="Enter phoneNo"/></br><br>
+    <label>Email_ID:</label><input type="text" id="email" placeholder="Enter email"/></br><br>
+    <label>Gender: </label><select id="gender">
+    <option>Male</option>
+    <option>Female</option>
+    </select><br>
+    <p>skills</p>
+    <input type="checkbox" name="skills" value="JavaScript">JS</input><br>
+    <input type="checkbox" name="skills" value="html">HTML</input><br>
+    <input type="checkbox" name="skills" value="css">CSS</input><br>
+    <input type="checkbox" name="skills" value="java">JAVA</input><br><br>
+    <label>isMarried</label>
+    
+    <input type="radio" id="yes" name="rate" value="yes"> Yes
+    <input type="radio" id="no" name="rate" value="no" checked="checked"> No<br><br>
+    
+    <button onclick="submit()">Submit</button>
+</body>
+<script>
+    let new_array=[];
+    function submit(){
+    let name=document.getElementById("name").value;
+    let phoneNo=document.getElementById("phoneNo").value;
+    let email=document.getElementById("email").value
+    let input1=document.getElementById("gender").value;
+    let array=[];
+    let input2=document.getElementsByName("skills");
+    let skill;
+    for(let i=0;i<input2.length;i++){
+        if(input2[i].checked){
+            skill=input2[i].value
+            array.push(skill);
+        }
+    }
+    
+
+    let rates=document.getElementsByName("rate")
+    let Married;
+    for(let i=0;i<rates.length;i++){
+        if(rates[i].checked){
+            Married=rates[i].value
+        }
+    }
+    let newObj={
+        name:name,
+        phoneNo:phoneNo,
+        email:email,
+        gender:input1,
+        skills:array,
+        married:Married,
+    }
+    new_array.push(newObj);
+    console.log(new_array);
+}
+</script>
+</html>
+
+
