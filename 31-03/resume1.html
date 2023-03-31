@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 style="text-align: center;">Resume</h1>
+    <label><b>Name:</b></label><input type="text" id="name" placeholder="Enter name"/><br><br>
+    <label><b>Phone_No:</b></label><input type="text" id="phoneNo" placeholder="Enter phoneNo"/><br><br>
+    <label><b>Email_Id:</b></label><input type="text" id="email" placeholder="Enter email" /><br><br>
+    <label><b>Objective:</b></label><input type="text" id="obj" placeholder="Enter objective" size="50" /><br><br>
+    <h2>Personal Details</h2>
+    <label><b>Father_name:</b></label><input type="text" id="f_name" placeholder="Enter Father name" /><br></br>
+    <label><b>Mother_name:</b></label><input type="text" id="m_name" placeholder="Enter Mother name" /><br><br>
+    <label><b>DOB:</b></label><input type="date" id="dob" placeholder="Enter date of birth" /><br><br>
+    <label><b>Gender:</b></label><select id="gender">
+      <option>Male</option>
+      <option>Female</option>
+    </select><br><br>
+    <label><b>Languages:</b></label><input type="text" id="languages" placeholder="Enter languages" /><br><br>
+    <label><b>skills</b></label><br>
+    <input type="checkbox"  name="skills" value="JavaScript">JS</input><br>
+    <input type="checkbox"  name="skills" value="html">HTML</input><br>
+    <input type="checkbox"  name="skills" value="css">CSS</input><br>
+    <input type="checkbox"  name="skills" value="java">JAVA</input><br><br>
+    <h3>Education</h3>
+    <table border="2">
+    <thead>
+        <tr>
+          <th>Id</th>
+          <th>name</th>
+          <th>institute</th>
+          <th>year</th>
+          <th>marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(0,'name',this.value)" /></td>
+          <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(0,'institute',this.value)" /></td>
+          <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(0,'year',this.value)"   /></td>
+          <td><input type="text" placeholder="Mark in percentage" onkeyup="getEducationValue(0,'mark',this.value)"   /></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(1,'name',this.value)" /></td>
+          <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(1,'institute',this.value)" /></td>
+          <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(1,'year',this.value)"   /></td>
+          <td><input type="text" placeholder="Mark in percentage" onkeyup="getEducationValue(1,'mark',this.value)"   /></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><input type="text" placeholder="Education name" onkeyup="getEducationValue(2,'name',this.value)" /></td>
+          <td><input type="text" placeholder="Institute name" onkeyup="getEducationValue(2,'institute',this.value)" /></td>
+          <td><input type="text" placeholder="Year of passed" onkeyup="getEducationValue(2,'year',this.value)"   /></td>
+          <td><input type="text" placeholder="Mark in percentage" onkeyup="getEducationValue(2,'mark',this.value)"   /></td>
+        </tr>
+      </tbody>
+    </table><br>
+    <label><b>Hobbies:</b></label><input type="text" id="hobbie" placeholder="Enter hobbies"/><br><br>
+    <button onclick="submit()">Submit</button>
+</body>
+<script>
+    let education = [];
+      
+      function getEducationValue(i,k,v){
+        
+  
+        education[i] = { 
+          ...education[i],
+          [k] : v
+        };
+    }
+    function submit(){
+    let name=document.getElementById("name").value;
+    let phoneNo=document.getElementById("phoneNo").value;
+    let email=document.getElementById("email").value
+    let Obj=document.getElementById("obj").value;
+    
+    let myFather=document.getElementById("f_name").value;
+    let myMother=document.getElementById("m_name").value;
+    let birth=document.getElementById("dob").value;
+    let gender=document.getElementById("gender").value;
+
+    let language=document.getElementById("languages").value;
+    let knownLanguages=language.split(",")
+
+    let input1=document.getElementsByName("skills");
+    let skill=[];
+    for(let i=0;i<input1.length;i++){
+        if(input1[i].checked){
+            skill.push(input1[i].value)
+        }
+    }
+
+    let myHobbie=document.getElementById("hobbie").value;
+    let newHobbies=myHobbie.split(",")
+    
+    let resume={
+        name:name,
+        phoneNo:phoneNo,
+        email:email,
+        objective:Obj,
+        fatherName:myFather,
+        motherName:myMother,
+        dob:birth,
+        gender:gender,
+        language:knownLanguages,
+        skills:skill,
+        education:education,
+        hobbies:newHobbies,
+    }
+    console.log(resume);
+    }
+</script>
+</html>
