@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>colors:</label><input type="text" id="colors" placeholder="Enter colors" /><br><br>
+    <label>Replace color:</label><input type="text" id="color" placeholder="Enter replace color" /><br><br>
+    <label>index:</label><input type="number" id="index" placeholder="Enter position" /><br><br>
+    <button onclick="replace()">Submit</button>
+</body>
+<script>
+    function replace(){
+        let colors=document.getElementById("colors").value;
+        let color=document.getElementById("color").value;
+        let index=document.getElementById("index").value
+        let colors1=colors.split(",");
+        console.log(colors1);
+        colors1[index]=color;
+        console.log(colors1);
+    }
+</script>
+</html>

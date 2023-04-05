@@ -5,7 +5,7 @@ function isGreaterThan10(num){
     else{
         console.log("Less than");
     }
-let result=15;
+let result=num;
 console.log(result);
 }
 isGreaterThan10(15);

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Fruits:</label><input type="text" id="fruits" placeholder="Enter fruits" /><br><br>
+    <label>Add fruits:</label><input type="text" id="fruit" placeholder="Add friut" /><br><br>
+    <button onclick="insert()">Submit</button>
+</body>
+<script>
+    function insert(){
+        let fruits=document.getElementById("fruits").value;
+        let arrFruits=fruits.split(",");
+        console.log(arrFruits);
+        let addFruits=document.getElementById("fruit").value;
+        arrFruits.push(addFruits);
+        console.log(arrFruits);
+    }
+</script>
+</html>

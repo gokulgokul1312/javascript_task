@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="f_input" placeholder="Enter input1" />
+    <input type="number" id="s_input" placeholder="Enetr input2" />
+    <button onclick="add()">Add</button>
+</body>
+<script>
+    function add() {
+        let num1 = Number(document.getElementById("f_input").value);
+        let num2 = Number(document.getElementById("s_input").value);
+        console.log(num1 + num2);
+    }
+</script>
+
+</html>
